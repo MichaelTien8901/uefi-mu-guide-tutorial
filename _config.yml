@@ -47,7 +47,7 @@ callouts:
 # Aux links (top right)
 aux_links:
   "View on GitHub":
-    - "https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec"
+    - "https://github.com/MichaelTien8901/uefi-mu-guide-tutorial"
 
 aux_links_new_tab: true
 

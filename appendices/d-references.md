@@ -46,8 +46,8 @@ All UEFI Forum specifications are available as free PDF downloads from the UEFI 
 |----------|-----|
 | Project Mu main site | [https://microsoft.github.io/mu/](https://microsoft.github.io/mu/) |
 | Getting started guide | [https://microsoft.github.io/mu/WhatAndWhy/overview/](https://microsoft.github.io/mu/WhatAndWhy/overview/) |
-| Build system documentation | [https://microsoft.github.io/mu/CodeDevelopment/build/](https://microsoft.github.io/mu/CodeDevelopment/build/) |
-| Feature documentation | [https://microsoft.github.io/mu/dyn/mu_feature_config/](https://microsoft.github.io/mu/dyn/mu_feature_config/) |
+| Build system documentation | [https://microsoft.github.io/mu/DeveloperDocs/build_community_docs/](https://microsoft.github.io/mu/DeveloperDocs/build_community_docs/) |
+| Feature configuration | [https://microsoft.github.io/mu/dyn/mu_feature_config/RepoDetails/](https://microsoft.github.io/mu/dyn/mu_feature_config/RepoDetails/) |
 
 ---
 
@@ -59,11 +59,11 @@ All UEFI Forum specifications are available as free PDF downloads from the UEFI 
 | EDK2 platforms | [https://github.com/tianocore/edk2-platforms](https://github.com/tianocore/edk2-platforms) |
 | EDK2 non-OSI binaries | [https://github.com/tianocore/edk2-non-osi](https://github.com/tianocore/edk2-non-osi) |
 | TianoCore wiki | [https://github.com/tianocore/tianocore.github.io/wiki](https://github.com/tianocore/tianocore.github.io/wiki) |
-| EDK2 build specification | [https://tianocore-docs.github.io/edk2-BuildSpecification/](https://tianocore-docs.github.io/edk2-BuildSpecification/) |
-| EDK2 DSC specification | [https://tianocore-docs.github.io/edk2-DscSpecification/](https://tianocore-docs.github.io/edk2-DscSpecification/) |
-| EDK2 INF specification | [https://tianocore-docs.github.io/edk2-InfSpecification/](https://tianocore-docs.github.io/edk2-InfSpecification/) |
-| EDK2 FDF specification | [https://tianocore-docs.github.io/edk2-FdfSpecification/](https://tianocore-docs.github.io/edk2-FdfSpecification/) |
-| EDK2 DEC specification | [https://tianocore-docs.github.io/edk2-DecSpecification/](https://tianocore-docs.github.io/edk2-DecSpecification/) |
+| EDK2 build specification | [https://tianocore-docs.github.io/edk2-BuildSpecification/draft/](https://tianocore-docs.github.io/edk2-BuildSpecification/draft/) |
+| EDK2 DSC specification | [https://tianocore-docs.github.io/edk2-DscSpecification/draft/](https://tianocore-docs.github.io/edk2-DscSpecification/draft/) |
+| EDK2 INF specification | [https://tianocore-docs.github.io/edk2-InfSpecification/draft/](https://tianocore-docs.github.io/edk2-InfSpecification/draft/) |
+| EDK2 FDF specification | [https://tianocore-docs.github.io/edk2-FdfSpecification/draft/](https://tianocore-docs.github.io/edk2-FdfSpecification/draft/) |
+| EDK2 DEC specification | [https://tianocore-docs.github.io/edk2-DecSpecification/draft/](https://tianocore-docs.github.io/edk2-DecSpecification/draft/) |
 | OVMF documentation | [https://github.com/tianocore/tianocore.github.io/wiki/OVMF](https://github.com/tianocore/tianocore.github.io/wiki/OVMF) |
 
 ---
@@ -129,7 +129,7 @@ All UEFI Forum specifications are available as free PDF downloads from the UEFI 
 
 | Project | URL |
 |---------|-----|
-| EDK2 Bugzilla | [https://bugzilla.tianocore.org](https://bugzilla.tianocore.org) |
+| EDK2 GitHub Issues | [https://github.com/tianocore/edk2/issues](https://github.com/tianocore/edk2/issues) |
 | Project Mu (per-repo) | GitHub Issues on each mu_* repository |
 
 ### Conferences and Talks
