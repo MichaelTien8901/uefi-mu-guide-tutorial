@@ -1,9 +1,6 @@
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@{{ site.mermaid.version | default: "10.6.0" }}/dist/mermaid.esm.min.mjs';
 
-  // kramdown renders ```mermaid blocks as <pre><code class="language-mermaid">.
-  // Mermaid expects <pre class="mermaid"> or <div class="mermaid">.
-  // Convert after DOM is ready, then run mermaid.
   mermaid.initialize({
     startOnLoad: false,
     theme: 'base',
@@ -24,14 +21,16 @@
     }
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('code.language-mermaid').forEach(function(codeEl) {
-      var pre = codeEl.parentElement;
-      var div = document.createElement('div');
-      div.className = 'mermaid';
-      div.textContent = codeEl.textContent;
-      pre.parentElement.replaceChild(div, pre);
-    });
-    mermaid.run();
+  // Module scripts run after DOM is parsed, so no DOMContentLoaded needed.
+  // kramdown renders ```mermaid as <pre><code class="language-mermaid">;
+  // convert to <div class="mermaid"> which Mermaid expects.
+  document.querySelectorAll('code.language-mermaid').forEach(function(codeEl) {
+    var pre = codeEl.parentElement;
+    var div = document.createElement('div');
+    div.className = 'mermaid';
+    div.textContent = codeEl.textContent;
+    pre.parentElement.replaceChild(div, pre);
   });
+
+  await mermaid.run();
 </script>
