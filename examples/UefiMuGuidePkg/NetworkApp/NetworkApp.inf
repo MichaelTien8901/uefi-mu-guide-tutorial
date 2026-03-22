@@ -1,0 +1,37 @@
+## @file
+#  NetworkApp.inf - TCP4 network connection example.
+#
+#  Copyright (c) 2026, UEFI Mu Guide Contributors. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = NetworkApp
+  FILE_GUID                      = 2F3A4B5C-6D7E-4F8A-9B0C-1D2E3F4A5B6C
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = NetworkAppEntry
+
+[Sources]
+  NetworkApp.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiMuGuidePkg/UefiMuGuidePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  BaseLib
+  BaseMemoryLib
+  MemoryAllocationLib
+  DebugLib
+  PrintLib
+
+[Protocols]
+  gEfiTcp4ServiceBindingProtocolGuid  ## CONSUMES
+  gEfiTcp4ProtocolGuid                ## CONSUMES

@@ -1,0 +1,38 @@
+## @file
+#  BootMenu.inf - Boot option menu display and selection.
+#
+#  Copyright (c) 2026, UEFI Mu Guide Contributors. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = BootMenu
+  FILE_GUID                      = 4B5C6D7E-8F9A-4B0C-1D2E-3F4A5B6C7D8E
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = BootMenuEntry
+
+[Sources]
+  BootMenu.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiMuGuidePkg/UefiMuGuidePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  BaseLib
+  BaseMemoryLib
+  MemoryAllocationLib
+  DebugLib
+  PrintLib
+  DevicePathLib
+
+[Guids]
+  gEfiGlobalVariableGuid  ## CONSUMES

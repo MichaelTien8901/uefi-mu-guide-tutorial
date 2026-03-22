@@ -1,0 +1,36 @@
+## @file
+#  DriverExample.inf - Simple DXE driver with Driver Binding Protocol.
+#
+#  Demonstrates how to create a UEFI driver with Supported/Start/Stop
+#  functions and install/uninstall the driver binding.
+#
+#  Copyright (c) 2026, UEFI Mu Guide Contributors. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = DriverExample
+  FILE_GUID                      = 2B3C4D5E-6F7A-4B8C-9D0E-1F2A3B4C5D6E
+  MODULE_TYPE                    = UEFI_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = DriverExampleEntry
+  UNLOAD_IMAGE                   = DriverExampleUnload
+
+[Sources]
+  DriverExample.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiMuGuidePkg/UefiMuGuidePkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  BaseLib
+  DebugLib
+  PrintLib
+  MemoryAllocationLib

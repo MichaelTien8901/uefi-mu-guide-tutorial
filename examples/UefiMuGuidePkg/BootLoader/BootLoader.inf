@@ -1,0 +1,41 @@
+## @file
+#  BootLoader.inf - File loading and ExitBootServices pattern.
+#
+#  Copyright (c) 2026, UEFI Mu Guide Contributors. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = BootLoader
+  FILE_GUID                      = 5C6D7E8F-9A0B-4C1D-2E3F-4A5B6C7D8E9F
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = BootLoaderEntry
+
+[Sources]
+  BootLoader.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiMuGuidePkg/UefiMuGuidePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  BaseLib
+  BaseMemoryLib
+  MemoryAllocationLib
+  DebugLib
+  PrintLib
+
+[Protocols]
+  gEfiSimpleFileSystemProtocolGuid  ## CONSUMES
+  gEfiLoadedImageProtocolGuid       ## CONSUMES
+
+[Guids]
+  gEfiFileInfoGuid                  ## CONSUMES

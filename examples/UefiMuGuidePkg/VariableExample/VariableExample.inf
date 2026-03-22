@@ -1,0 +1,38 @@
+## @file
+#  VariableExample.inf - UEFI variable read/write/delete demo.
+#
+#  Copyright (c) 2026, UEFI Mu Guide Contributors. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = VariableExample
+  FILE_GUID                      = 1E2F3A4B-5C6D-4E7F-8A9B-0C1D2E3F4A5B
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = VariableExampleEntry
+
+[Sources]
+  VariableExample.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiMuGuidePkg/UefiMuGuidePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  BaseLib
+  BaseMemoryLib
+  MemoryAllocationLib
+  DebugLib
+  PrintLib
+
+[Guids]
+  gEfiGlobalVariableGuid            ## CONSUMES
+  gUefiMuGuideTestVariableGuid      ## PRODUCES ## CONSUMES

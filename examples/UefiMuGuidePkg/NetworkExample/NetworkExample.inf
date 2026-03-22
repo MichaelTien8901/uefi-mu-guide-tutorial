@@ -1,0 +1,35 @@
+## @file
+#  NetworkExample.inf - Network interface enumeration and MAC display.
+#
+#  Copyright (c) 2026, UEFI Mu Guide Contributors. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = NetworkExample
+  FILE_GUID                      = 0D1E2F3A-4B5C-4D6E-7F8A-9B0C1D2E3F4A
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = NetworkExampleEntry
+
+[Sources]
+  NetworkExample.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiMuGuidePkg/UefiMuGuidePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  BaseLib
+  DebugLib
+  PrintLib
+  MemoryAllocationLib
+
+[Protocols]
+  gEfiSimpleNetworkProtocolGuid  ## CONSUMES

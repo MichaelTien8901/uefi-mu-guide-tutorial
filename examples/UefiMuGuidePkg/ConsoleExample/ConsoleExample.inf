@@ -1,0 +1,31 @@
+## @file
+#  ConsoleExample.inf - Console I/O, colors, and key input demo.
+#
+#  Copyright (c) 2026, UEFI Mu Guide Contributors. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = ConsoleExample
+  FILE_GUID                      = 6F7A8B9C-0D1E-4F2A-3B4C-5D6E7F8A9B0C
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ConsoleExampleEntry
+
+[Sources]
+  ConsoleExample.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiMuGuidePkg/UefiMuGuidePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  BaseLib
+  DebugLib
+  PrintLib

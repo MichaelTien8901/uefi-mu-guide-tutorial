@@ -1,0 +1,29 @@
+## @file
+#  UefiMuGuidePkg - UEFI Project Mu Development Guide Examples
+#
+#  Package declaration for the UEFI Mu Guide tutorial examples.
+#
+#  Copyright (c) 2026, UEFI Mu Guide Contributors. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  DEC_SPECIFICATION = 0x00010017
+  PACKAGE_NAME      = UefiMuGuidePkg
+  PACKAGE_GUID      = 3A4B8C2D-6E1F-4D5A-B7C9-0E2F1A3B5D7E
+  PACKAGE_VERSION   = 1.0
+
+[Includes]
+  Include
+
+[Guids]
+  ## GUID for the UefiMuGuidePkg package token space
+  gUefiMuGuidePkgTokenSpaceGuid = { 0x4b5c9d1e, 0x7f2a, 0x4e6b, { 0xa8, 0xd3, 0x1f, 0x4c, 0x6e, 0x9a, 0x2b, 0x5d } }
+
+  ## GUID for the custom test variable example
+  gUefiMuGuideTestVariableGuid  = { 0x8c3d7e2f, 0x1a5b, 0x4f9c, { 0xb6, 0xe4, 0x2d, 0x5f, 0x8a, 0x1c, 0x3e, 0x7b } }
+
+[Protocols]
+  ## GUID for the Calculator Protocol example
+  gCalculatorProtocolGuid       = { 0xa1b2c3d4, 0xe5f6, 0x4a7b, { 0x8c, 0x9d, 0x0e, 0x1f, 0x2a, 0x3b, 0x4c, 0x5d } }

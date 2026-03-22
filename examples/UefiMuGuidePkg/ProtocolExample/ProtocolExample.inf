@@ -1,0 +1,38 @@
+## @file
+#  ProtocolExample.inf - Custom protocol definition and usage.
+#
+#  Defines a CALCULATOR_PROTOCOL with Add/Subtract operations,
+#  installs it, then locates and exercises it.
+#
+#  Copyright (c) 2026, UEFI Mu Guide Contributors. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = ProtocolExample
+  FILE_GUID                      = 3C4D5E6F-7A8B-4C9D-0E1F-2A3B4C5D6E7F
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ProtocolExampleEntry
+
+[Sources]
+  ProtocolExample.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiMuGuidePkg/UefiMuGuidePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  BaseLib
+  DebugLib
+  PrintLib
+  MemoryAllocationLib
+
+[Protocols]
+  gCalculatorProtocolGuid         ## PRODUCES ## CONSUMES

@@ -1,0 +1,35 @@
+## @file
+#  BlockIoExample.inf - Block device enumeration and media info.
+#
+#  Copyright (c) 2026, UEFI Mu Guide Contributors. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = BlockIoExample
+  FILE_GUID                      = 9C0D1E2F-3A4B-4C5D-6E7F-8A9B0C1D2E3F
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = BlockIoExampleEntry
+
+[Sources]
+  BlockIoExample.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiMuGuidePkg/UefiMuGuidePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  BaseLib
+  DebugLib
+  PrintLib
+  MemoryAllocationLib
+
+[Protocols]
+  gEfiBlockIoProtocolGuid  ## CONSUMES
