@@ -1,12 +1,27 @@
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@{{ site.mermaid.version | default: "10.6.0" }}/dist/mermaid.esm.min.mjs';
+
+  // kramdown renders ```mermaid blocks as <pre><code class="language-mermaid">.
+  // Mermaid expects <pre class="mermaid"> or <div class="mermaid">.
+  // Convert after DOM is ready, then run mermaid.
   mermaid.initialize({
-    startOnLoad: true,
+    startOnLoad: false,
     theme: 'dark',
     securityLevel: 'loose',
     flowchart: {
       useMaxWidth: true,
       htmlLabels: true
     }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('code.language-mermaid').forEach(function(codeEl) {
+      var pre = codeEl.parentElement;
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = codeEl.textContent;
+      pre.parentElement.replaceChild(div, pre);
+    });
+    mermaid.run();
   });
 </script>
