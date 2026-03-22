@@ -824,7 +824,7 @@ Ideas for additional features:
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ShellCommand/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/ShellCommand/).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ShellCommand/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/ShellCommand).
 
 ## Summary
 

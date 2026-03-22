@@ -1005,7 +1005,7 @@ DownloadWithRetry (
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/NetworkApp/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/NetworkApp/).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/NetworkApp/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/NetworkApp).
 
 ## Summary
 

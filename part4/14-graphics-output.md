@@ -786,7 +786,7 @@ For best performance:
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/GopExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/GopExample/).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/GopExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/GopExample).
 
 ## Summary
 

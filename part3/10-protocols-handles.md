@@ -968,7 +968,7 @@ if (EFI_ERROR (Status) || Interface == NULL) {
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ProtocolExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/ProtocolExample/).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ProtocolExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/ProtocolExample).
 
 ## Summary
 

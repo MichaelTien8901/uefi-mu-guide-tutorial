@@ -818,7 +818,7 @@ Shell> reconnect -r         # Reconnect all drivers to all devices
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/DriverExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/DriverExample/).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/DriverExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/DriverExample).
 
 ## Summary
 

@@ -1005,7 +1005,7 @@ LoadElf64 (
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/BootLoader/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/BootLoader/).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/BootLoader/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/BootLoader).
 
 ## Summary
 

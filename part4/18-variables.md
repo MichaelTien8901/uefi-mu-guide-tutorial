@@ -942,7 +942,7 @@ UefiMain(
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/VariableExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/VariableExample/).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/VariableExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/VariableExample).
 
 ## Summary
 

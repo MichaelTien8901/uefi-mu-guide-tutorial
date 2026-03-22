@@ -684,7 +684,7 @@ These PCDs enable guard pages around allocations. When code writes past the end 
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/MemoryExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/MemoryExample/).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/MemoryExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/MemoryExample).
 
 ## Summary
 

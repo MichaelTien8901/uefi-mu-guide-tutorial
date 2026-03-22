@@ -770,7 +770,7 @@ CopyFile(
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/FileSystemExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/FileSystemExample/).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/FileSystemExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/FileSystemExample).
 
 ## Summary
 

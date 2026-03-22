@@ -964,7 +964,7 @@ If a runtime driver stores pointers to its data and the OS calls `SetVirtualAddr
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ServicesExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/ServicesExample/).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ServicesExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/ServicesExample).
 
 ## Summary
 
