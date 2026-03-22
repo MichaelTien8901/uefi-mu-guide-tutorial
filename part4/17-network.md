@@ -993,7 +993,7 @@ All IPv4 protocols have IPv6 counterparts (e.g., `EFI_TCP6_PROTOCOL`, `EFI_UDP6_
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/NetworkExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/NetworkExample).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/NetworkExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial/tree/main/examples/UefiMuGuidePkg/NetworkExample).
 
 ## Summary
 

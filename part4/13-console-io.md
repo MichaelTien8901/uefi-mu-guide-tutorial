@@ -817,7 +817,7 @@ UefiMain(
 ---
 
 {: .note }
-> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ConsoleExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec/tree/main/docs/examples/UefiMuGuidePkg/ConsoleExample).
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ConsoleExample/`](https://github.com/MichaelTien8901/uefi-mu-guide-tutorial/tree/main/examples/UefiMuGuidePkg/ConsoleExample).
 
 ## Summary
 
