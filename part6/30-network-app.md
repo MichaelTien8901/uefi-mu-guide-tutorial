@@ -1004,6 +1004,9 @@ DownloadWithRetry (
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/NetworkApp/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/NetworkApp/).
+
 ## Summary
 
 You have built a complete UEFI HTTP client that configures the network, resolves DNS names, sends HTTP GET requests, and receives response data. This project exercises the full UEFI network stack and demonstrates patterns that apply to PXE boot clients, firmware update agents, and pre-OS diagnostic tools.

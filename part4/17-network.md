@@ -992,6 +992,9 @@ All IPv4 protocols have IPv6 counterparts (e.g., `EFI_TCP6_PROTOCOL`, `EFI_UDP6_
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/NetworkExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/NetworkExample/).
+
 ## Summary
 
 | Concept | Key Points |

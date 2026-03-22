@@ -929,6 +929,9 @@ For platforms with `EFI_SIMPLE_POINTER_PROTOCOL` or `EFI_ABSOLUTE_POINTER_PROTOC
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/BootMenu/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/BootMenu/).
+
 ## Summary
 
 This project demonstrates how to build an interactive, graphical boot menu that ties together display output, user input, UEFI variable storage, and image loading. The patterns here form the foundation for production boot managers and pre-boot UI applications found in modern firmware.

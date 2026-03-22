@@ -823,6 +823,9 @@ Ideas for additional features:
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ShellCommand/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/ShellCommand/).
+
 ## Summary
 
 You now have a complete, working UEFI Shell command that demonstrates the full lifecycle: defining parameters, parsing them, accessing UEFI services, formatting output, and returning proper status codes. This pattern extends naturally to any shell utility you need to build.

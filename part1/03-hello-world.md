@@ -830,6 +830,9 @@ Use `gRT->GetVariable()` to read the `Boot0000` variable and display its content
 
 These exercises preview concepts that are covered in depth in [Part 3: UEFI Core Concepts]({% link part3/index.md %}) and [Part 4: Essential UEFI Services]({% link part4/index.md %}).
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/HelloWorld/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/HelloWorld/).
+
 ## 3.13 Summary
 
 In this chapter, you:

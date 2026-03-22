@@ -636,6 +636,9 @@ You can also use device path inspection to determine the disk type (NVMe, SATA, 
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/BlockIoExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/BlockIoExample/).
+
 ## Summary
 
 | Concept | Key Points |

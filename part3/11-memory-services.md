@@ -683,6 +683,9 @@ These PCDs enable guard pages around allocations. When code writes past the end 
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/MemoryExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/MemoryExample/).
+
 ## Summary
 
 UEFI memory services provide two allocation interfaces -- pool (variable-size, like `malloc`) and page (page-aligned, fixed granularity) -- each tagged with a memory type that determines the lifetime of the allocation. The memory map is the authoritative description of physical memory and is critical for the `ExitBootServices` transition. Understanding memory types, the two-call `GetMemoryMap` pattern, and the `DescriptorSize` iteration rule will prevent the majority of memory-related bugs in your firmware code.

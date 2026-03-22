@@ -963,6 +963,9 @@ If a runtime driver stores pointers to its data and the OS calls `SetVirtualAddr
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ServicesExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/ServicesExample/).
+
 ## Summary
 
 Boot Services and Runtime Services are the two pillars of the UEFI service architecture. Boot Services provide the rich environment needed during firmware initialization -- memory management, protocol handling, event systems, and image loading. Runtime Services provide the minimal set of services that persist into the operating system -- variables, time, reset, and capsules. The `ExitBootServices()` transition is the bright line between these two worlds, and understanding it correctly is essential for writing reliable firmware and OS loaders.

@@ -816,6 +816,9 @@ UefiMain(
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ConsoleExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/ConsoleExample/).
+
 ## Summary
 
 The UEFI console protocols provide a simple but effective text-based interface for user interaction in the pre-boot environment.

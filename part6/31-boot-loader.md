@@ -1004,6 +1004,9 @@ LoadElf64 (
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/BootLoader/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/BootLoader/).
+
 ## Summary
 
 This project demonstrated the complete boot loading process: filesystem access, kernel loading, information gathering, the critical `ExitBootServices` transition, and kernel handoff. These are the same fundamental steps that production boot loaders like GRUB, systemd-boot, and Windows Boot Manager perform, all built on the UEFI specification.

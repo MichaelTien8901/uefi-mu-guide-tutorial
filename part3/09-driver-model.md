@@ -817,6 +817,9 @@ Shell> reconnect -r         # Reconnect all drivers to all devices
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/DriverExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/DriverExample/).
+
 ## Summary
 
 The UEFI driver model provides a clean, protocol-based architecture for managing hardware and services. The Driver Binding Protocol's three-function pattern -- `Supported()`, `Start()`, `Stop()` -- enforces a disciplined approach to device discovery and lifecycle management. Combined with Component Name and Driver Diagnostics, this model produces drivers that are discoverable, testable, and hot-plug capable.

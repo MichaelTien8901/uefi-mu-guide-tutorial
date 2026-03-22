@@ -967,6 +967,9 @@ if (EFI_ERROR (Status) || Interface == NULL) {
 
 ---
 
+{: .note }
+> **Complete source code**: The full working example for this chapter is available at [`examples/UefiMuGuidePkg/ProtocolExample/`]({{ site.baseurl }}/examples/UefiMuGuidePkg/ProtocolExample/).
+
 ## Summary
 
 The protocol and handle database is UEFI's answer to the question: "How do we build a modular firmware system in C without classes, interfaces, or dynamic linking?" Handles provide object identity, GUIDs provide type-safe interface identification, and the `Install`/`Locate`/`Open`/`Close` functions provide lifecycle management. Understanding this system is essential for writing drivers, debugging boot failures, and designing extensible firmware architectures.
