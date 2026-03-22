@@ -6,8 +6,18 @@
   // Convert after DOM is ready, then run mermaid.
   mermaid.initialize({
     startOnLoad: false,
-    theme: 'dark',
+    theme: 'base',
     securityLevel: 'loose',
+    themeVariables: {
+      background: '#faf6ed',
+      primaryColor: '#e8e0d0',
+      primaryTextColor: '#333333',
+      primaryBorderColor: '#c4b99a',
+      lineColor: '#8b7d6b',
+      secondaryColor: '#f0e8d8',
+      tertiaryColor: '#f5f0e5',
+      fontFamily: 'Georgia, serif'
+    },
     flowchart: {
       useMaxWidth: true,
       htmlLabels: true
