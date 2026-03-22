@@ -1,27 +1,136 @@
+<!-- Table styling for better visibility in dark mode -->
+<style>
+  table {
+    border-collapse: collapse !important;
+    border: 1px solid #6b7280 !important;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #6b7280 !important;
+    padding: 8px 12px !important;
+  }
+
+  table th {
+    background-color: rgba(107, 114, 128, 0.3) !important;
+    font-weight: 600 !important;
+  }
+
+  table tbody tr:nth-child(even) {
+    background-color: rgba(107, 114, 128, 0.1) !important;
+  }
+
+  table tbody tr:hover {
+    background-color: rgba(107, 114, 128, 0.2) !important;
+  }
+</style>
+
+<!-- Mermaid diagrams with paper-like background -->
+<style>
+  .mermaid,
+  pre.mermaid,
+  .language-mermaid,
+  code.language-mermaid {
+    background-color: #d5d0c8 !important;
+    border-radius: 8px !important;
+    padding: 16px !important;
+    margin: 16px 0 !important;
+    display: block !important;
+  }
+
+  .mermaid text,
+  .mermaid tspan,
+  .mermaid .nodeLabel,
+  .mermaid .label,
+  .mermaid .edgeLabel,
+  .mermaid .cluster-label,
+  .mermaid .messageText,
+  .mermaid .loopText,
+  .mermaid .noteText,
+  .mermaid .labelText,
+  .mermaid .actor {
+    fill: #2c3e50 !important;
+    color: #2c3e50 !important;
+  }
+
+  .mermaid path,
+  .mermaid .edgePath path,
+  .mermaid .flowchart-link,
+  .mermaid .messageLine0,
+  .mermaid .messageLine1,
+  .mermaid .relation {
+    stroke: #4a5568 !important;
+  }
+
+  line[id^="actor"] {
+    stroke: #000000 !important;
+    stroke-width: 0.5px !important;
+  }
+
+  .mermaid .messageLine0,
+  .mermaid .messageLine1 {
+    stroke: #4a5568 !important;
+    stroke-width: 1.5px !important;
+  }
+
+  .mermaid marker path,
+  .mermaid .arrowheadPath {
+    fill: #4a5568 !important;
+    stroke: #4a5568 !important;
+  }
+
+  .mermaid .node rect,
+  .mermaid .node circle,
+  .mermaid .node ellipse,
+  .mermaid .node polygon,
+  .mermaid .node path {
+    fill: #c5c0b8 !important;
+    stroke: #8a8578 !important;
+  }
+
+  .mermaid .cluster rect {
+    fill: #cac5bd !important;
+    stroke: #8a8578 !important;
+  }
+
+  .mermaid .actor-box,
+  .mermaid rect.actor {
+    fill: #c5c0b8 !important;
+    stroke: #8a8578 !important;
+  }
+
+  .mermaid .note {
+    fill: #ddd8c8 !important;
+    stroke: #a89878 !important;
+  }
+
+  .mermaid .mindmap-node rect,
+  .mermaid .mindmap-node circle {
+    fill: #c5c0b8 !important;
+    stroke: #8a8578 !important;
+  }
+
+  .mermaid .mindmap-edges path {
+    stroke: #4a5568 !important;
+    stroke-width: 2px !important;
+  }
+</style>
+
+<!-- Mermaid initialization and kramdown code block conversion -->
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@{{ site.mermaid.version | default: "10.6.0" }}/dist/mermaid.esm.min.mjs';
 
   mermaid.initialize({
     startOnLoad: false,
-    theme: 'base',
+    theme: 'default',
     securityLevel: 'loose',
-    themeVariables: {
-      background: '#faf6ed',
-      primaryColor: '#e8e0d0',
-      primaryTextColor: '#333333',
-      primaryBorderColor: '#c4b99a',
-      lineColor: '#8b7d6b',
-      secondaryColor: '#f0e8d8',
-      tertiaryColor: '#f5f0e5',
-      fontFamily: 'Georgia, serif'
-    },
     flowchart: {
       useMaxWidth: true,
       htmlLabels: true
     }
   });
 
-  // Module scripts run after DOM is parsed, so no DOMContentLoaded needed.
+  // Module scripts run after DOM is parsed.
   // kramdown renders ```mermaid as <pre><code class="language-mermaid">;
   // convert to <div class="mermaid"> which Mermaid expects.
   document.querySelectorAll('code.language-mermaid').forEach(function(codeEl) {
@@ -33,4 +142,28 @@
   });
 
   await mermaid.run();
+</script>
+
+<!-- Fix sequence diagram lifelines after mermaid renders -->
+<script>
+(function() {
+  function fixActorLines() {
+    var lines = document.querySelectorAll('line[id^="actor"]');
+    for (var i = 0; i < lines.length; i++) {
+      lines[i].setAttribute('stroke', '#000000');
+      lines[i].setAttribute('stroke-width', '0.5px');
+    }
+  }
+
+  if (document.readyState === 'complete') {
+    setTimeout(fixActorLines, 500);
+    setTimeout(fixActorLines, 1500);
+  } else {
+    window.addEventListener('load', function() {
+      setTimeout(fixActorLines, 500);
+      setTimeout(fixActorLines, 1500);
+      setTimeout(fixActorLines, 3000);
+    });
+  }
+})();
 </script>
