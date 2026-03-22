@@ -1,0 +1,53 @@
+name: Build UEFI Examples
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - 'docs/examples/**'
+  pull_request:
+    paths:
+      - 'docs/examples/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}/edk2-builder:latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install stuart
+        run: |
+          pip install edk2-pytool-extensions edk2-pytool-library
+
+      - name: Stuart Setup
+        run: |
+          cd docs/examples
+          stuart_setup -c UefiMuGuidePkg/UefiMuGuidePkg.dsc
+
+      - name: Stuart Update
+        run: |
+          cd docs/examples
+          stuart_update -c UefiMuGuidePkg/UefiMuGuidePkg.dsc
+
+      - name: Stuart Build
+        run: |
+          cd docs/examples
+          stuart_build -c UefiMuGuidePkg/UefiMuGuidePkg.dsc
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: uefi-examples
+          path: docs/examples/Build/
+          retention-days: 7
