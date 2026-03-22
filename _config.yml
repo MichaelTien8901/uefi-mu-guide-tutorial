@@ -70,3 +70,4 @@ exclude:
   - vendor/
   - examples/
   - .github/
+  - README.md
