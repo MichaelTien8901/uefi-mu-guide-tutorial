@@ -69,7 +69,7 @@ flowchart LR
 ```
 
 {: .note }
-> This chapter covers both **Windows** and **Linux** setups. You only need to follow the instructions for your platform. macOS is partially supported but not recommended for firmware development due to toolchain limitations.
+> This chapter covers both **Windows** and **Linux** setups. You only need to follow the instructions for your platform. macOS is not directly covered here, but macOS users have two practical options: (1) install the required toolchain via [Homebrew](https://brew.sh/) (`brew install nasm iasl qemu gcc` and then use pip to install stuart), or (2) use the **Docker-based setup** described in Section 2.10, which is the recommended approach for macOS since it avoids toolchain compatibility issues.
 
 ## 2.2 Prerequisites
 
@@ -488,7 +488,7 @@ Build/QemuQ35Pkg/DEBUG_GCC5/FV/QEMUQ35_VARS.fd
 ```
 
 {: .important }
-> The `GCC5` tag is used for all modern GCC versions (12, 13, 14). The name is historical and does not mean GCC 5 is required.
+> Recent EDK2 and Project Mu versions have transitioned the toolchain tag from `GCC5` to `GCC`. If you are using a newer repository, the build output path will use `DEBUG_GCC` instead of `DEBUG_GCC5`, and you should pass `GCC` as the `TOOL_CHAIN_TAG`. Older repositories still use `GCC5`. Check your platform's `PlatformBuild.py` or build logs to see which tag is expected. The `GCC5` name was historical and does not mean GCC 5 is required -- both tags work with modern GCC versions (12, 13, 14).
 
 ### Step 5: Run in QEMU
 
@@ -554,6 +554,7 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install base dependencies
+# Note: mono-devel is included because some EDK2 BaseTools utilities use Mono/.NET
 RUN apt-get update && apt-get install -y \
     build-essential \
     gcc \
@@ -580,8 +581,9 @@ RUN pip3 install --no-cache-dir \
 # Create workspace
 WORKDIR /workspace
 
-# Set GCC5 toolchain
+# Set GCC toolchain prefix for cross-compilation (use GCC5_ or GCC_ depending on repo age)
 ENV GCC5_AARCH64_PREFIX=/usr/bin/aarch64-linux-gnu-
+ENV GCC_AARCH64_PREFIX=/usr/bin/aarch64-linux-gnu-
 
 # Default entrypoint
 CMD ["/bin/bash"]
@@ -630,16 +632,19 @@ The EDK2/Project Mu build system uses several environment variables. Here is a r
 |:---------|:---------|:--------|:-------------|
 | `WORKSPACE` | Both | Root of the build workspace | `/home/user/fw/mu_tiano_platforms` |
 | `PACKAGES_PATH` | Both | Semicolon-separated list of additional package search paths | `Common/MU;MU_BASECORE` |
-| `GCC5_AARCH64_PREFIX` | Linux | Cross-compiler prefix for ARM64 builds | `/usr/bin/aarch64-linux-gnu-` |
+| `GCC5_AARCH64_PREFIX` (or `GCC_AARCH64_PREFIX`) | Linux | Cross-compiler prefix for ARM64 builds | `/usr/bin/aarch64-linux-gnu-` |
 | `NASM_PREFIX` | Windows | Path to NASM directory (with trailing backslash) | `C:\nasm\` |
 | `IASL_PREFIX` | Both | Path to iASL directory | `/usr/bin/` |
 | `EDK_TOOLS_PATH` | Both | Path to EDK2 BaseTools | `$(WORKSPACE)/BaseTools` |
-| `TOOL_CHAIN_TAG` | Both | Compiler toolchain identifier | `VS2022`, `GCC5` |
+| `TOOL_CHAIN_TAG` | Both | Compiler toolchain identifier | `VS2022`, `GCC5` (or `GCC` on newer repos) |
 | `TARGET` | Both | Build target type | `DEBUG`, `RELEASE`, `NOOPT` |
 | `TARGET_ARCH` | Both | Target architecture | `X64`, `IA32`, `AARCH64` |
 
 {: .note }
 > When using stuart, most of these variables are set automatically by the platform's `PlatformBuild.py`. You rarely need to set them manually.
+
+{: .note }
+> **AArch64/ARM64 support**: While the build system fully supports AARCH64 as a target architecture (and Project Mu includes `mu_silicon_arm_tiano` as a first-class component), this guide's tutorial content focuses on X64 with QEMU. Dedicated AArch64 platform bring-up content is planned for a future update.
 
 ## 2.12 Troubleshooting Common Issues
 

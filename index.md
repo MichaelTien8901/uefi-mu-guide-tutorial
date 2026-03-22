@@ -29,7 +29,7 @@ This guide provides a complete learning path for UEFI firmware development throu
 
 - Basic C programming knowledge
 - Familiarity with command-line tools (Git, Python/pip)
-- A development machine (Windows 10/11, Ubuntu 20.04+, or macOS)
+- A development machine (Windows 10/11, Ubuntu 22.04+, or macOS)
 
 ## Guide Structure
 

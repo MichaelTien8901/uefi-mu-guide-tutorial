@@ -47,12 +47,12 @@ callouts:
 # Aux links (top right)
 aux_links:
   "View on GitHub":
-    - "https://github.com/yourusername/uefi-mu-guide-tutorial-openspec"
+    - "https://github.com/MichaelTien8901/uefi-mu-guide-tutorial-openspec"
 
 aux_links_new_tab: true
 
 # Footer
-footer_content: "UEFI Project Mu Development Guide. Built with <a href=\"https://just-the-docs.com\">just-the-docs</a>."
+footer_content: "UEFI Project Mu Development Guide. Last updated: March 2026. Built with <a href=\"https://just-the-docs.com\">just-the-docs</a>."
 
 # Back to top link
 back_to_top: true

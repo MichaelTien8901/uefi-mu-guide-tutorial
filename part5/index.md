@@ -39,6 +39,18 @@ Master the UEFI Secure Boot chain of trust, the key hierarchy (PK, KEK, db, dbx)
 ### [Chapter 23: ACPI Integration]({% link part5/23-acpi.md %})
 Understand how firmware publishes ACPI tables to describe platform topology, power management, and device configuration. Learn ASL fundamentals, dynamic table generation using the ACPI Table Protocol, debugging techniques with acpidump and iasl, and Project Mu's ACPI management patterns.
 
+### [Chapter 24: Capsule Updates]({% link part5/24-capsule-updates.md %})
+Learn how UEFI capsule-based firmware updates work, from capsule generation and signing through delivery mechanisms (in-band and out-of-band), the UpdateCapsule runtime service, and Project Mu's FmpDevicePkg integration for production firmware update workflows.
+
+### [Chapter 25: DFCI]({% link part5/25-dfci.md %})
+Explore the Device Firmware Configuration Interface, Microsoft's open-source framework for remote, zero-touch firmware configuration. Understand DFCI's certificate-based trust model, permission system, and how it enables enterprise fleet management of firmware settings.
+
+### [Chapter 26: Rust in Firmware]({% link part5/26-rust-firmware.md %})
+Write UEFI firmware components in Rust using the r-efi crate. Set up the Rust toolchain for UEFI targets, build a `no_std` UEFI application, implement custom allocators, and understand how Project Mu integrates Rust modules alongside C code.
+
+### [Chapter 27: Platform Testing]({% link part5/27-platform-testing.md %})
+Build a comprehensive testing strategy for firmware: host-based unit tests, UEFI shell-based integration tests, QEMU-based automated testing, stuart's CI test infrastructure, and platform validation best practices.
+
 ## Prerequisites
 
 Before starting Part 5, you should be comfortable with:

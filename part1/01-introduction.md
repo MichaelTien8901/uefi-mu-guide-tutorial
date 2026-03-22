@@ -52,7 +52,7 @@ The original IBM PC BIOS (Basic Input/Output System) dates back to 1981. It was 
 
 In the mid-1990s, Intel began developing the **Intel Boot Initiative (IBI)**, later renamed **EFI (Extensible Firmware Interface)**, for the Itanium platform. The Itanium processor had no real mode, which made a legacy BIOS impossible. EFI was designed from the ground up as a modern, 32/64-bit firmware interface.
 
-In 2005, Intel contributed the EFI specification to the **Unified EFI Forum**, a cross-industry standards body. The specification was renamed to **UEFI (Unified Extensible Firmware Interface)**, and the forum published UEFI 2.0 in January 2006. Today, the UEFI specification is at version 2.10 (August 2022) and is implemented by virtually every x86, ARM, and RISC-V system.
+In 2005, Intel contributed the EFI specification to the **Unified EFI Forum**, a cross-industry standards body. The specification was renamed to **UEFI (Unified Extensible Firmware Interface)**, and the forum published UEFI 2.0 in January 2006. Today, the UEFI specification is at version 2.10 (August 2022, current as of this writing) and is implemented by virtually every x86, ARM, and RISC-V system. The UEFI Forum has published errata updates to 2.10 and continues work toward future specification revisions — always check the [UEFI Forum website](https://uefi.org/specifications) for the latest version.
 
 ### What UEFI Replaced and Why
 
@@ -379,40 +379,43 @@ flowchart LR
         C4["Ch 4: Multi-Repo Architecture"]
         C5["Ch 5: Stuart Build System"]
         C6["Ch 6: Dependency Mgmt"]
-        C7["Ch 7: CI/CD Pipelines"]
+        C7["Ch 7: Platform DSC/FDF"]
+        C8["Ch 8: CI/CD Pipelines"]
     end
 
     subgraph Part3["Part 3: Core Concepts"]
-        C8["Ch 8: Driver Model"]
-        C9["Ch 9: Protocols & Handles"]
-        C10["Ch 10: Memory Services"]
-        C11["Ch 11: Boot & RT Services"]
+        C9["Ch 9: Driver Model"]
+        C10["Ch 10: Protocols & Handles"]
+        C11["Ch 11: Memory Services"]
+        C12["Ch 12: Boot & RT Services"]
     end
 
     subgraph Part4["Part 4: Essential Services"]
-        C12["Ch 12: Console I/O"]
-        C13["Ch 13: Graphics (GOP)"]
-        C14["Ch 14: File System"]
-        C15["Ch 15: Block I/O"]
-        C16["Ch 16: Networking"]
-        C17["Ch 17: Variables"]
+        C13["Ch 13: Console I/O"]
+        C14["Ch 14: Graphics (GOP)"]
+        C15["Ch 15: File System"]
+        C16["Ch 16: Block I/O"]
+        C17["Ch 17: Networking"]
+        C18["Ch 18: Variables"]
     end
 
     subgraph Part5["Part 5: Advanced Topics"]
-        C18["Ch 18: PEI/DXE Deep Dive"]
-        C19["Ch 19: SMM"]
-        C20["Ch 20: Security"]
-        C21["Ch 21: ACPI"]
-        C22["Ch 22: Capsule Updates"]
-        C23["Ch 23: DFCI"]
-        C24["Ch 24: Rust in Firmware"]
+        C19["Ch 19: PEI Phase"]
+        C20["Ch 20: DXE Phase"]
+        C21["Ch 21: SMM"]
+        C22["Ch 22: Security"]
+        C23["Ch 23: ACPI"]
+        C24["Ch 24: Capsule Updates"]
+        C25["Ch 25: DFCI"]
+        C26["Ch 26: Rust in Firmware"]
+        C27["Ch 27: Platform Testing"]
     end
 
     subgraph Part6["Part 6: Projects"]
-        C25["Ch 25: Shell Command"]
-        C26["Ch 26: Boot Menu"]
-        C27["Ch 27: Network App"]
-        C28["Ch 28: Boot Loader"]
+        C28["Ch 28: Shell Command"]
+        C29["Ch 29: Boot Menu"]
+        C30["Ch 30: Network App"]
+        C31["Ch 31: Boot Loader"]
     end
 
     Part1 --> Part2
@@ -426,23 +429,23 @@ flowchart LR
 
 You are reading Chapter 1 right now. In [Chapter 2]({% link part1/02-environment-setup.md %}), you will install the full Project Mu development toolchain. In [Chapter 3]({% link part1/03-hello-world.md %}), you will write, build, and run your first UEFI application.
 
-### Part 2: Project Mu Structure and Tooling (Chapters 4-7)
+### Part 2: Project Mu Structure and Tooling (Chapters 4-8)
 
-A deep dive into how Project Mu organizes its codebase across multiple repositories, how the stuart build system works, how dependencies are managed, and how to set up CI/CD pipelines for your firmware project.
+A deep dive into how Project Mu organizes its codebase across multiple repositories, how the stuart build system works, how dependencies are managed, platform DSC/FDF files, and how to set up CI/CD pipelines for your firmware project.
 
-### Part 3: UEFI Core Concepts (Chapters 8-11)
+### Part 3: UEFI Core Concepts (Chapters 9-12)
 
 The conceptual heart of UEFI: the driver model, the protocol/handle database, memory services, and the full set of Boot Services and Runtime Services.
 
-### Part 4: Essential UEFI Services (Chapters 12-17)
+### Part 4: Essential UEFI Services (Chapters 13-18)
 
 Hands-on chapters covering the UEFI services you will use most: console I/O, graphics output, file system access, block I/O, networking, and UEFI variables.
 
-### Part 5: Advanced Topics (Chapters 18-24)
+### Part 5: Advanced Topics (Chapters 19-27)
 
-Professional-level firmware topics: deep dives into PEI and DXE internals, System Management Mode (SMM), security (Secure Boot, Measured Boot), ACPI table generation, capsule-based firmware updates, DFCI, and writing firmware in Rust.
+Professional-level firmware topics: deep dives into PEI and DXE internals, System Management Mode (SMM), security (Secure Boot, Measured Boot), ACPI table generation, capsule-based firmware updates, DFCI, writing firmware in Rust, and platform testing.
 
-### Part 6: Practical Projects (Chapters 25-28)
+### Part 6: Practical Projects (Chapters 28-31)
 
 Complete, end-to-end projects that tie together everything you have learned: building a custom UEFI Shell command, creating a graphical boot menu, developing a network application, and writing a custom boot loader.
 

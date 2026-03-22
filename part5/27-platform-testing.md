@@ -1007,4 +1007,4 @@ Invest in testing infrastructure early in your firmware project. The upfront cos
 
 ---
 
-[Previous: Chapter 26 - Rust in Firmware](/part5/rust-firmware/){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Previous: Chapter 26 - Rust in Firmware]({{ site.baseurl }}/part5/rust-firmware/){: .btn .fs-5 .mb-4 .mb-md-0 }

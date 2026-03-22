@@ -120,7 +120,9 @@ graph TB
 
 ### Prerequisites
 
-Rust UEFI development requires the nightly toolchain because the UEFI targets and certain features (`abi_efiapi`, allocator APIs) are not yet stabilized.
+Rust UEFI development historically required the nightly toolchain because the UEFI targets and certain features (`abi_efiapi`, allocator APIs) were not yet stabilized.
+
+> **Update (Rust 1.86+):** The `extern "efiapi"` calling convention was stabilized in Rust 1.86 (early 2025), so nightly is no longer required solely for `efiapi`. However, nightly may still be needed for other features such as the UEFI targets themselves, `build-std`, or the global allocator API, depending on your toolchain version.
 
 ```bash
 # Install Rust via rustup
@@ -225,7 +227,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-r-efi = "4.5.0"
+r-efi = "4"              # Use major version to get latest 4.x; check crates.io for updates
 
 [profile.dev]
 panic = "abort"
@@ -501,13 +503,16 @@ unsafe impl GlobalAlloc for UefiAllocator {
         let bs = unsafe { &*BOOT_SERVICES };
         let mut ptr: *mut core::ffi::c_void = core::ptr::null_mut();
 
-        // UEFI AllocatePool guarantees 8-byte alignment
-        // For larger alignments, we need to over-allocate and adjust
-        let (alloc_size, offset) = if layout.align() <= 8 {
-            (layout.size(), 0usize)
+        // UEFI AllocatePool guarantees 8-byte alignment.
+        // For larger alignments, we over-allocate to make room for alignment
+        // padding and to store the original pointer within the allocated block
+        // (writing before the allocated region would corrupt UEFI pool headers).
+        let ptr_size = core::mem::size_of::<*mut u8>();
+        let (alloc_size, needs_alignment) = if layout.align() <= 8 {
+            (layout.size(), false)
         } else {
-            // Over-allocate to ensure alignment
-            (layout.size() + layout.align(), layout.align())
+            // Extra space: alignment padding + room to store original pointer
+            (layout.size() + layout.align() + ptr_size, true)
         };
 
         let status = unsafe {
@@ -522,15 +527,18 @@ unsafe impl GlobalAlloc for UefiAllocator {
             return core::ptr::null_mut();
         }
 
-        if offset == 0 {
+        if !needs_alignment {
             ptr as *mut u8
         } else {
-            // Align the pointer
             let raw = ptr as usize;
-            let aligned = (raw + offset) & !(layout.align() - 1);
-            // Store the original pointer just before the aligned pointer
+            // Reserve space at the start of the block to store the original pointer,
+            // then align the address after that storage area
+            let after_storage = raw + ptr_size;
+            let aligned = (after_storage + layout.align() - 1) & !(layout.align() - 1);
+            // Store the original pointer immediately before the aligned address
+            // (this location is guaranteed to be within our allocated block)
             unsafe {
-                *((aligned - core::mem::size_of::<usize>()) as *mut usize) = raw;
+                *((aligned - ptr_size) as *mut usize) = raw;
             }
             aligned as *mut u8
         }
@@ -761,7 +769,7 @@ impl<'a, T> ProtocolHandle<'a, T> {
 The Rust-in-firmware ecosystem is evolving rapidly:
 
 - **Target stabilization**: The UEFI targets are on track for stabilization in Rust
-- **Standard UEFI crates**: Crates like `r-efi` and `uefi-rs` continue to mature
+- **Standard UEFI crates**: Crates like `r-efi` and `uefi-rs` continue to mature. `r-efi` is a thin FFI binding layer that provides raw UEFI type definitions and constants with minimal abstraction, while `uefi-rs` is a higher-level safe Rust wrapper that offers ergonomic APIs, automatic resource management, and safe abstractions over UEFI services. The code examples in this chapter use `r-efi`
 - **Better build integration**: Tighter integration between Cargo and EDK2/Stuart
 - **More Rust modules in Project Mu**: Gradual migration of security-critical code to Rust
 - **Formal verification**: Rust's type system enables easier formal verification of firmware properties
@@ -786,5 +794,5 @@ Rust is not a silver bullet -- it requires learning new patterns and working wit
 
 ---
 
-[Next: Chapter 27 - Platform Testing](/part5/platform-testing/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Previous: Chapter 25 - DFCI](/part5/dfci/){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Next: Chapter 27 - Platform Testing]({{ site.baseurl }}/part5/platform-testing/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Previous: Chapter 25 - DFCI]({{ site.baseurl }}/part5/dfci/){: .btn .fs-5 .mb-4 .mb-md-0 }

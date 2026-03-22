@@ -618,5 +618,5 @@ In the next chapter, we explore Rust in firmware development -- how Project Mu i
 
 ---
 
-[Next: Chapter 26 - Rust in Firmware](/part5/rust-firmware/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Previous: Chapter 24 - Capsule Updates](/part5/capsule-updates/){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Next: Chapter 26 - Rust in Firmware]({{ site.baseurl }}/part5/rust-firmware/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Previous: Chapter 24 - Capsule Updates]({{ site.baseurl }}/part5/capsule-updates/){: .btn .fs-5 .mb-4 .mb-md-0 }

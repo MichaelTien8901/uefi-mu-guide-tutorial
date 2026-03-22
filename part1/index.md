@@ -31,7 +31,7 @@ Write, build, and run your first UEFI application. Understand the structure of a
 
 ## What You Will Need
 
-- A development machine running Windows 10/11 or Ubuntu 20.04+
+- A development machine running Windows 10/11 or Ubuntu 22.04+
 - Basic C programming knowledge
 - Familiarity with the command line and Git
 - About 20 GB of free disk space (for the full Project Mu source tree and build output)

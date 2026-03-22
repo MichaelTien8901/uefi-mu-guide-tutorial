@@ -620,5 +620,5 @@ In the next chapter, we explore DFCI (Device Firmware Configuration Interface), 
 
 ---
 
-[Next: Chapter 25 - DFCI](/part5/dfci/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Previous: Chapter 23 - Secure Boot Deep Dive](/part5/secure-boot-deep-dive/){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Next: Chapter 25 - DFCI]({{ site.baseurl }}/part5/dfci/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Previous: Chapter 23 - Secure Boot Deep Dive]({{ site.baseurl }}/part5/secure-boot-deep-dive/){: .btn .fs-5 .mb-4 .mb-md-0 }

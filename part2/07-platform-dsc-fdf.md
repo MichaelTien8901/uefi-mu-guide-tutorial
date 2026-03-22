@@ -77,7 +77,7 @@ A DSC file is divided into sections, each controlling a different aspect of the 
   PLATFORM_VERSION        = 1.0
   DSC_SPECIFICATION       = 0x0001001C
   OUTPUT_DIRECTORY        = Build/MyPlatform
-  SUPPORTED_ARCHITECTURES = AARCH64
+  SUPPORTED_ARCHITECTURES = AARCH64    # or IA32|X64 for Intel/AMD platforms
   BUILD_TARGETS           = DEBUG|RELEASE|NOOPT
   SKUID_IDENTIFIER        = DEFAULT
 
