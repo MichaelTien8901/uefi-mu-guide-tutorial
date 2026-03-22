@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Part 4: Essential UEFI Services"
-nav_order: 5
+nav_order: 6
 has_children: true
 permalink: /part4/
 ---

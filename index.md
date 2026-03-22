@@ -54,11 +54,25 @@ Complete hands-on projects: custom shell commands, graphical boot menu, network 
 ### [Appendices]({% link appendices/index.md %})
 Reference material: EDK2 build system, migration guide, debugging techniques, specifications, glossary, and alternative firmware.
 
+## Study Guides by Role
+
+Not sure where to start? Pick the path that matches your role:
+
+| Role | Essential Chapters | Details |
+|:-----|:-------------------|:--------|
+| **UEFI Application Developer** | Ch 1-3, 9-18, 28-31 | [Full guide]({% link study-guides.md %}#uefi-application-developer) |
+| **Platform / Firmware Engineer** | Ch 1-8, 19-20, 23, 27 | [Full guide]({% link study-guides.md %}#platform--firmware-engineer) |
+| **Security Engineer** | Ch 1-3, 21-22, 24-25 | [Full guide]({% link study-guides.md %}#security-engineer) |
+| **EDK2-to-Mu Migrator** | Ch 4-8, App B | [Full guide]({% link study-guides.md %}#edk2-to-project-mu-migrator) |
+
+See the [detailed study guides]({% link study-guides.md %}) for recommended and optional chapters per role.
+
 ## How to Use This Guide
 
 - **Sequential learning**: Follow the parts in order for a structured learning experience from beginner to advanced
 - **Reference**: Jump directly to any chapter for specific topics — each chapter is self-contained with cross-references where needed
 - **Hands-on**: Every chapter includes practical code examples that you can build and run with stuart and QEMU
+- **Role-based**: Follow one of the [study guides]({% link study-guides.md %}) above for a focused learning path
 
 ## UEFI Boot Flow Overview
 
